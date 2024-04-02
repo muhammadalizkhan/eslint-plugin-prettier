@@ -77,7 +77,18 @@ This will:
 - Enable the `prettier/prettier` rule.
 - Disable the `arrow-body-style` and `prefer-arrow-callback` rules which are problematic with this plugin - see the below for why.
 - Enable the `eslint-config-prettier` config which will turn off ESLint rules that conflict with Prettier.
-
+- If you are many Error of prettier, after Project Creation, then create a file .prettierignore add add the following lines:
+./*
+*/*
+/*.* 
+also Add the Following lines in .eslintrc.js
+module.exports = {
+  root: true,
+  extends: '@react-native',
+  rules: {
+    'prettier/prettier': 0,
+  },
+};
 ## Configuration (new: `eslint.config.js`)
 
 For [flat configuration](https://eslint.org/docs/latest/use/configure/configuration-files-new), this plugin ships with an `eslint-plugin-prettier/recommended` config that sets up both `eslint-plugin-prettier` and [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) in one go.
